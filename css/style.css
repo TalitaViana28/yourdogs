@@ -1,0 +1,297 @@
+body,
+p,
+h1,
+h2,
+span,
+ul,
+li,
+blockquote {
+  margin: 0px;
+  padding: 0px;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  border-radius: 5px;
+}
+
+/*General*/
+
+.general {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-areas:
+    "header header header"
+    "sidenav-1 content sidenav-2"
+    "footer footer footer";
+}
+
+@media (max-width: 800px) {
+  .general {
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas:
+      "header header"
+      "sidenav-1 sidenav-1"
+      "content sidenav-2"
+      "footer footer";
+  }
+}
+
+@media (max-width: 600px) {
+  .general {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "sidenav-1"
+      "content"
+      "sidenav-2"
+      "footer";
+  }
+}
+
+/*Header*/
+
+.header {
+  grid-area: header;
+  background: linear-gradient(135deg, #2da092, #b1e3dd);
+  padding: 30px 60px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+
+.header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.header nav a {
+  display: block;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  transition: 0.1s;
+}
+
+.header nav a:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.header li + li {
+  margin-left: 30px;
+}
+
+@media (max-width: 800px) {
+  .header {
+    grid-template-columns: auto;
+  }
+  .header-logo {
+    margin-bottom: 15px;
+  }
+  .header nav a {
+    font-size: 0.75em;
+  }
+}
+
+@media (max-width: 500px) {
+  .header nav ul {
+    display: grid;
+    margin: 0px;
+    padding: 0px;
+  }
+  .header li + li {
+    margin-left: 0px;
+  }
+  .header nav a {
+    margin-bottom: 15px;
+    padding: 10px;
+    text-align: center;
+  }
+}
+
+/*Sidenav-1*/
+.sidenav-1 {
+  grid-area: sidenav-1;
+  padding: 60px;
+}
+
+.sidenav-1 li a {
+  display: block;
+  margin: 0 auto 30px auto;
+}
+
+@media (max-width: 800px) {
+  .sidenav-1 ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .sidenav-1 {
+    grid-column: auto;
+    padding: 30px 60px 0px 60px;
+  }
+}
+
+/*Content*/
+
+.content {
+  grid-area: content;
+  background: #f7f7f7;
+  margin-right: 30px;
+  padding: 60px 30px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.content h1 {
+  margin-bottom: 10px;
+}
+
+.content-attributes {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 30px;
+}
+
+.content-attributes > div {
+  width: 80px;
+  text-align: center;
+  background: #b1e3dd;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
+  position: relative;
+}
+
+.content-attributes > div:first-child {
+  margin-right: 30px;
+}
+
+.content-attributes span {
+  display: block;
+}
+
+.content-attributes h2 {
+  margin: 10px auto;
+}
+
+.numero {
+  margin: 10px auto;
+}
+.rotulo {
+  background: white;
+  border-radius: 0 0 5px 5px;
+  position: relative;
+  top: 2px;
+  padding: 5px 0;
+}
+
+.content-1 {
+  grid-column: 1 /-1;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.content-2 {
+  margin-left: 120px;
+  margin-bottom: 30px;
+}
+
+.content-2-emphasis {
+  width: 180px;
+  margin-right: 120px;
+  background: #b1e3dd;
+  border-radius: 5px;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+.content-2-emphasis li {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.content-2-emphasis li + li {
+  border-top: 2px solid white;
+}
+
+.content-quote {
+  background: #b1e3dd;
+  grid-column: 1/-1;
+  padding: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.content-3 {
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .content {
+    grid-template-columns: auto;
+    margin-right: 0px;
+  }
+  .content > div {
+    text-align: center;
+  }
+  .content-attributes {
+    margin-top: 15px;
+    justify-content: center;
+    align-self: center;
+  }
+  .content-2 {
+    justify-self: center;
+    margin-left: 0px;
+  }
+  .content-2-emphasis {
+    justify-self: center;
+    margin-right: 0px;
+  }
+  .content-3-img {
+    justify-self: center;
+  }
+  .content-3 {
+    margin-top: 15px;
+  }
+}
+
+/*Sidenav-2*/
+.sidenav-2 {
+  grid-area: sidenav-2;
+  margin: 30px;
+}
+
+.sidenav-2 ul li {
+  margin-top: 30px;
+}
+
+@media (max-width: 600px) {
+  .sidenav-2 {
+    grid-template-columns: auto;
+    justify-self: center;
+    margin-top: 15px;
+  }
+}
+
+/*Footer*/
+.footer {
+  grid-area: footer;
+  background: linear-gradient(135deg, #2da092, #b1e3dd);
+}
+
+.footer p {
+  padding: 30px;
+  text-align: center;
+}

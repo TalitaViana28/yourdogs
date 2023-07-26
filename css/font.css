@@ -1,0 +1,48 @@
+.font-1 {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 1.125em;
+  font-weight: 400;
+}
+
+.font-2 {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 1.25em;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.font-3 {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 1.25em;
+  font-weight: 400;
+}
+
+.font-4 {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 1.5em;
+  font-weight: 400;
+}
+
+.font-5 {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 1.75em;
+  font-weight: bold;
+}
+
+.font-6 {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 2em;
+  font-weight: 400;
+}
+
+.font-7 {
+  font-family: "Comfortaa", cursive;
+  font-size: 2.25em;
+  font-weight: bold;
+}
+
+.font-8 {
+  font-family: "Comfortaa", cursive;
+  font-size: 3em;
+  font-weight: bold;
+}
